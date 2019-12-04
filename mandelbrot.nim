@@ -5,15 +5,16 @@ const
   screen_width = 100
   screen_height = 50
   max_iters = 100
-  cutoff = 1.0e8
+  cutoff = 1.0e2
 
 proc f(z: Complex64, c: Complex64): Complex64 =
   return pow(z, 2.0) + c
 
 proc test_pixel(x: int, y: int): bool =
-  let
+  const 
     sw = float(screen_width)
     sh = float(screen_height)
+  let
     r = 4.0*(float(x)/sw - 0.5f)
     i = 4.0*(float(y)/sh - 0.5f)
     c = complex64(r, i)
@@ -31,5 +32,5 @@ for y in countDown(screen_height - 1, 0):
     if test_pixel(x, y):
       write(stdout, '@')
     else:
-      write(stdout, ' ')
+      write(stdout, '.')
   write(stdout, '\n')
