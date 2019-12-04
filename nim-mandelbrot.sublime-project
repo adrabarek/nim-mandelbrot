@@ -1,0 +1,19 @@
+{
+	"build_systems":
+	[
+		{
+			"env":
+			{
+				"PATH": "/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/drabard/bin:/home/drabard/.cargo/bin:/home/drabard/bin/android-sdk/tools/bin:/home/drabard/bin/android-sdk/platform-tools:/home/drabard/.nimble/bin" 
+			},
+			"name": "Script",
+			"shell_cmd": "pushd ${project_path} && nim c mandelbrot.nim && popd"
+		}
+	],
+	"folders":
+	[
+		{
+			"path": "."
+		}
+	]
+}
